@@ -1,3 +1,4 @@
+"""Pivot Index is a index where sum of values on its left is equal to sum of values on its right"""
 class Solution:
     def pivotIndex(self, nums):
         self.nums = nums
