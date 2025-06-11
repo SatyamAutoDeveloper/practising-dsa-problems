@@ -60,7 +60,7 @@ class CircularDoublyLinkedList:
         """To insert a node after given node"""
         temp = self.search_data(val)
         if temp is not None:
-            node = NewNode(data)
+            node = NewNode(item=data)
             node.next = temp.next
             node.prev = temp
             temp.next.prev = node
@@ -121,7 +121,7 @@ cll.insert_node_at_start(1)
 cll.insert_node_at_last(10)
 cll.insert_node_at_last(20)
 cll.search_data(2)
-cll.insert_node_after_given_node(2, 5)  #This Function is inserting 'None' after given value.(Need to debug it more)
+cll.insert_node_after_given_node(2, 5)
 cll.traverse_backward_and_print_cdll()
 cll.delete_node_from_start()
 cll.delete_node_from_last()
