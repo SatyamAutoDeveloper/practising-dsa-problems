@@ -22,12 +22,16 @@ class Stack():
             data = self.sll.start.item
             self.sll.delete_node_from_start()
             self.item_count -= 1
+        else:
+            raise IndexError("Stack is EMPTY")
         return data
 
     def peek(self):
         """To display the top item from the stack"""
         if not self.is_empty():
             return self.sll.start.item
+        else:
+            raise IndexError("Stack is EMPTY")
 
     def size(self):
         """To display the total size of the stack"""
