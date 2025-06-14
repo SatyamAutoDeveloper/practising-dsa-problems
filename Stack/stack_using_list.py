@@ -22,14 +22,22 @@ class Stack:
             return self.item[-1]
         else:
             raise IndexError("Stack is EMPTY")
+        
+    def size(self):
+        """To get the size of stack"""
+        return len(self.item)
 
 st = Stack()
 st.push(10)
 st.push(20)
 st.push(30)
 top_val = st.peek()
+st_size = st.size()
+print("Size of Stack before pop operation::", st_size)
 print("Top Value in the Stack ::",top_val)
 top_val = st.pop()
 print("pop top value from the Stack ::",top_val)
 top_val = st.peek()
+st_size = st.size()
+print("Size of Stack after pop operation::", st_size)
 print("Top Value in the Stack ::",top_val)
