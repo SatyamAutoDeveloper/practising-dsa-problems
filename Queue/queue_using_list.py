@@ -1,7 +1,6 @@
 class Queue:
     def __init__(self):
         self.item = []
-        self.item_count = 0
 
     def is_empty(self):
         return len(self.item) == 0
@@ -23,21 +22,19 @@ class Queue:
     def enqueue(self, data):
         """To Insert the data into the Queue"""
         self.item.append(data)
-        self.item_count += 1
 
     def dequeue(self):
         """To remove the 1st inserted data from the Queue"""
         if not self.is_empty():
            first_val = self.get_front()
            self.item.remove(first_val)
-           self.item_count -= 1
         else:
             raise ValueError("This f{first_val} is not found in Queue")
         return first_val
         
     def size(self):
         """To Display Total Count of the Elements inside the Queue"""
-        return self.item_count
+        return len(self.item)
 
 
 qu = Queue()
