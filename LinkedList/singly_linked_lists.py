@@ -27,7 +27,7 @@ class SinglyLinkedList:
                 temp = temp.next
             temp.next = node
         else:
-            self.start=None
+            self.start=node
 
     def search_data(self, data):
         """To Search the Specific data, Run the while loop on complete SLL and stop it once you find your data else return None"""
@@ -98,7 +98,7 @@ class SinglyLinkedList:
         while temp is not None:
             print(temp.item, end="  ")
             temp = temp.next
-    
+ 
 sll = SinglyLinkedList()
 sll.insert_node_at_start(2)
 sll.insert_node_at_start(1)
@@ -107,7 +107,7 @@ sll.insert_node_at_end(20)
 sll.insert_node_after_specific_node(2, 5)
 sll.insert_node_after_specific_node(5, 7)
 sll.traverse_and_count_node_in_sll()
-#sll.delete_node_from_start()
-#sll.delete_node_from_end()
+sll.delete_node_from_start()
+sll.delete_node_from_end()
 sll.delete_node_after_specific_node(7)
 sll.print_sll()
