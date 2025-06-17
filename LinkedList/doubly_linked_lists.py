@@ -32,7 +32,7 @@ class DoublyLinkedList:
             temp.next = node
             node.prev = temp
         else:
-            self.start.prev = node
+            self.start = node
 
     def search_data(self, data):
         """To Search the specific data in the DLL"""
@@ -115,16 +115,16 @@ class DoublyLinkedList:
             temp = temp.next
 
 dll = DoublyLinkedList()
+dll.insert_node_at_end(10)
 dll.insert_node_at_start(2)
 dll.insert_node_at_start(1)
-dll.insert_node_at_end(10)
 dll.insert_node_at_end(20)
 #dll.search_data(10)
 #dll.insert_node_after_given_node(2, 7)
 dll.insert_node_after_given_node(2, 5)
 dll.traverse_forward_and_count_node_in_dll()
 dll.traverse_backward_and_print_data_of_nodes_in_dll(20)
-#dll.delete_node_from_start()
-#dll.delete_node_from_last()
+dll.delete_node_from_start()
+dll.delete_node_from_last()
 #dll.delete_node_after_given_node(2)
 dll.print_dll()
