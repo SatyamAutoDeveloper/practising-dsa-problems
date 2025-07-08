@@ -29,7 +29,7 @@ class Graph:
                 print(f"{start} has an edge with vertex {vertex1}")
                 print(f"{end} has an edge with vertex {vertex2}")
                 return True  
-            False 
+            return False 
         else:
             print("Invalid Vertices")
 
