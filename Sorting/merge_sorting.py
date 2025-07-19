@@ -1,28 +1,39 @@
 class MergeSort:
-
-    def divide_and_conqure(self, nums):
-        left = 0
-        right = len(nums)
-        mid = left + right // 2
-        rightArridx = mid + 1
-        conqure_list = []
+    def mergeProcess(self, nums, lefthalf, righthalf):
+        i = 0
+        j = 0
+        k = 0
         
-        while left <= mid:
-            if nums[left] < nums[rightArridx]:
-                conqure_list.append(nums[left])
-                left += 1
+        while i < len(lefthalf) and j < len(righthalf):
+            if lefthalf[i] < righthalf[j]:
+                nums[k] = lefthalf[i]
+                i += 1
             else:
-                conqure_list.append(nums[rightArridx])
-                rightArridx += 1
-        return conqure_list
+                nums[k] = righthalf[j]
+                j += 1
+            k +=1
+        
+        while i < len(lefthalf):
+            nums[k] = lefthalf[i]
+            k += 1
+            i += 1
+        while j < len(righthalf):
+            nums[k] = righthalf[j]
+            k += 1
+            j += 1
 
     def mergeSort(self, nums):
         """To sort the list using merge sort"""
         left = 0
         right = len(nums)
-        mid = self.divide(nums)
-        sorted_list = self.conqure(mid, nums[left:mid+1], nums[mid+1, right])
-        print("sorted list", sorted_list)
+        if len(nums) > 1:
+            mid = left + right // 2
+            lefthalf = nums[:mid]
+            righthalf = nums[mid:]
+            self.mergeSort(lefthalf)
+            self.mergeSort(righthalf)
+            self.mergeProcess(nums, lefthalf, righthalf)
+        return nums
 
 ms = MergeSort()
-print("Sorted List using Merge Sort ::", ms.divide_and_conqure([32,20,18,70,60,39,75,90,65]))
+print("Sorted List using Merge Sort ::", ms.mergeSort([32,20,18,70,60,39,75,90,65]))
