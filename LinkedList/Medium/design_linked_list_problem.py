@@ -59,3 +59,16 @@ obj.addAtIndex(1,2)
 print(obj.get(1))
 obj.deleteAtIndex(1)
 print(obj.get(1))
+
+"""
+Time Complexity:
+- get(index): O(index) in the worst case, because it traverses from the head to the specified index.
+- addAtHead(val): O(1), as it inserts at the beginning.
+- addAtTail(val): O(n), since it calls addAtIndex at position count, which requires traversing the entire list.
+- addAtIndex(index, val): O(index), because it traverses up to the position before the insertion point.
+- deleteAtIndex(index): O(index), as it traverses to the node just before the target index for deletion.
+
+Space Complexity:
+- O(n), where n is the number of nodes in the linked list, due to storing each node separately.
+- Additional space is used for temporary variables during traversal, which is constant.
+"""
