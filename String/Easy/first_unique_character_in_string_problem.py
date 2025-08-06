@@ -15,6 +15,23 @@ print("First Unique Char ::", sol.firstUniqChar("loveleetcode"))
 
 
 """
+Time Complexity:
+- The first loop iterates over all characters in the string `s`, which takes O(n) time, where n is the length of `s`.
+- The second loop also iterates over all characters in `s`, again O(n).
+- The operations inside both loops are constant time (dictionary get/set and comparison).
+- Overall, the total time complexity is O(n) + O(n) = O(n).
+
+Space Complexity:
+- The dictionary `dict1` stores counts for each unique character in `s`. In the worst case (all characters are unique), it will hold n entries.
+- Therefore, the space complexity is O(n).
+
+In summary:
+- Time complexity: O(n)
+- Space complexity: O(n)
+"""
+
+
+"""
 Solution 1:
 
 for idx, char in enumerate(s):
