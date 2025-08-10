@@ -48,6 +48,12 @@ sol = Solution()
 print(sol.isPalindrome(head))
 
 
+"""
+The time complexity of this solution is O(n), where n is the number of nodes in the linked list. This is because the algorithm traverses the list multiple times: once to find the middle node, once to reverse the second half, and once to compare the two halves. Each of these steps is linear in the size of the list, so overall, the process is linear.
+
+The space complexity is O(1), as the algorithm only uses a fixed number of pointers (slow, fast, prev, next_node, etc.) regardless of the size of the input list. It modifies the list in place for the reversal step and does not allocate additional data structures proportional to the input size.
+"""
+
 
 """
 Solution 1:
