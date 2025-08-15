@@ -17,6 +17,21 @@ print(sol.majorityElement([3,2,3]))
 
 
 """
+The provided code implements the Boyer-Moore Majority Vote algorithm to find the majority element in a list.
+
+Time Complexity:
+- The algorithm iterates through the list exactly once, processing each element in constant time.
+- Therefore, the overall time complexity is O(n), where n is the length of the list.
+
+Space Complexity:
+- The algorithm uses only a fixed number of variables (curr and count), regardless of the input size.
+- Hence, the space complexity is O(1).
+
+In summary:
+Time complexity is linear, O(n), and space complexity is constant, O(1).
+"""
+
+"""
 Solution 1:: TC: O(n), SC: O(n)
 
 def majorityElement(self, nums):
