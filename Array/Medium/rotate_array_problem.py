@@ -24,3 +24,15 @@ The time complexity of the rotate method is O(n), where n is the length of the i
 
 The space complexity is O(1), meaning it uses a constant amount of extra space. The reversal is done in-place by swapping elements within the input array, and no additional data structures proportional to the input size are used. The only extra variables are for indices and temporary storage during swaps, which do not depend on the size of the input array.
 """
+
+"""
+Solution:: 1 - TC: O(n), SC: O(1)
+
+def rotate(self, nums, k):
+	while k != 0:
+		nums.insert(0, nums[-1])
+		nums.pop(-1)
+		k -= 1
+		    
+	return nums	
+"""
