@@ -2,21 +2,23 @@
 Time complexity: O(n * m)
 Space complexity: O(m)
 
-This problem can be solved with different approaches like 
+This problem can be solved with different approaches like
 1. horizontal scanning
 2. vertical scanning
 3. Divide and Conquer Algorithm
 4. Binary Search
 """
-class LongestCommonPrefix():
+
+
+class LongestCommonPrefix:
     def longestCommonPrefix(self, strs):
         lcp_str = []
         idx = 0
         subidx = 0
-        if (len(strs) == 1) or (min(strs,key=len) == ""):
-            return min(strs,key=len)
+        if (len(strs) == 1) or (min(strs, key=len) == ""):
+            return min(strs, key=len)
         else:
-            while len(min(strs,key=len)) > idx:
+            while len(min(strs, key=len)) > idx:
                 lcp_str.append(strs[0][idx])
                 for id in range(1, len(strs)):
                     if strs[id][subidx] not in lcp_str[idx]:
@@ -27,9 +29,10 @@ class LongestCommonPrefix():
                 subidx += 1
                 idx += 1
         return "".join(lcp_str)
-            
+
+
 lcp = LongestCommonPrefix()
-print("longest common prefix string is ::", lcp.longestCommonPrefix(["a"])) 
+print("longest common prefix string is ::", lcp.longestCommonPrefix(["a"]))
 
 """
 Efficient Solution:
@@ -49,4 +52,19 @@ def longestCommonPrefix(self, strs):
                 break
 
         return prefix
+"""
+
+"""
+Solution 2::
+
+def longestCommonPrefix(self, strs):
+    if not strs:
+		return ""
+    prefix = strs[0]
+    for s in strs[1:]:
+        while not s.startswith(prefix) and prefix:
+            prefix = prefix[:-1]
+        if not prefix:
+            return ""
+    return prefix
 """
