@@ -1,10 +1,19 @@
-class ReverseWords():
+class ReverseWords:
     def reverseWords(self, s):
         """To reverse the words of a strings without leading/trailing spaces and single space b/w the two words"""
-        s = " ".join(s.split()[::-1])
-        return s
+        s = s.split()
+        left = 0
+        right = len(s) - 1
+        while left < right:
+            s[left], s[right] = s[right], s[left]
+            left += 1
+            right -= 1
+
+        return " ".join(s)
+
+
 rw = ReverseWords()
-print("String with Reverse Words ::",rw.reverseWords("  hello world  "))
+print("String with Reverse Words ::", rw.reverseWords("  hello a  good world  "))
 
 """
 Time Complexity:
@@ -21,4 +30,12 @@ Space Complexity:
 In summary:
 Time complexity: O(n)
 Space complexity: O(n)
+"""
+
+"""
+Solution 1::
+
+def reverseWords(self, s):
+    s = " ".join(s.split()[::-1])
+    return s
 """
